@@ -110,7 +110,7 @@ function App() {
 }
 ```
 
-#### global theme
+#### Global Theme
 
 To keep the colours consistent within my app, I needed a way to share variables between all of my CSS files. I used CSS custom properties(variables) to achieve this. CSS variables can be set in a global CSS file and be accessed from any CSS file on the page using the var() function.
 
