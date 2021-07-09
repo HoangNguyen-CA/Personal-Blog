@@ -66,6 +66,6 @@ export const { setError, hideError } = errorSlice.actions;
 export default errorSlice.reducer;
 ```
 
-### Conclusion
+## Conclusion
 
 That is pretty much all of the code necessary to create the Redux store. Without redux-toolkit, the code is much more complicated. In the future, I will 100% be using the redux-toolkit package if my project integrates redux for state management.
