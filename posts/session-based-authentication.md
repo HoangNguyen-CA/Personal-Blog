@@ -1,6 +1,6 @@
 ---
 title: 'Session-Based Authentication with Passport'
-date: '2021-07-06'
+date: '2021-07-08'
 ---
 
 I wanted to learn more about backend authentication/authorization to be able to create a wider variety of web apps. I saw that passport is a popular package that handles authentication in Express, so I decided to build a project based around the passport-local strategy. The passport-local strategy uses session-based authentication. The strategy is commonly implemented with templating engines, but I decided to make it compatible with frontend frameworks (React).
