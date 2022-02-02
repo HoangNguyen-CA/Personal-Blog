@@ -13,3 +13,9 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.profile {
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: center;
+}

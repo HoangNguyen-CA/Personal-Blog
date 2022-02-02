@@ -45,7 +45,7 @@ export default function Home({ posts }) {
               </Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={sys.createdAt} />
+                <Date dateString={fields.date} />
               </small>
             </li>
           ))}
