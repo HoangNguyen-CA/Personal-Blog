@@ -4,7 +4,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../../components/layout';
-import Date from '../../components/date';
+import DateComponent from '../../components/date';
 
 import utilStyles from '../../styles/utils.module.css';
 
@@ -39,14 +39,6 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Code = ({ children }) => {
-  return (
-    <pre>
-      <code>{children}</code>
-    </pre>
-  );
-};
-
 export default function BlogPost({ post }) {
   const { fields } = post;
   const { title, body, featuredImage, date } = fields;
@@ -59,7 +51,7 @@ export default function BlogPost({ post }) {
       <article>
         <h1 className={utilStyles.headingXl}>{title}</h1>
         <div className={utilStyles.lightText}>
-          <Date dateString={date} />
+          <DateComponent dateString={date} />
         </div>
         <Image
           src={`https:${featuredImage.fields.file.url}`}

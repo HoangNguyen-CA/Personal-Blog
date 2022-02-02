@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Date from '../components/date';
+import DateComponent from '../components/date';
 
 import Layout, { siteTitle } from '../components/layout';
 
@@ -18,6 +18,10 @@ export async function getStaticProps() {
     content_type: 'blogPost',
   });
 
+  res.items.sort((a, b) => {
+    return new Date(b.fields.date) - new Date(a.fields.date);
+  });
+
   return {
     props: {
       posts: res.items,
@@ -33,6 +37,10 @@ export default function Home({ posts }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>I'm learning web development and writing about my journey.</p>
+        <small>
+          This blog was created using NextJS and uses static site generation.
+          Posts are managed by Contentful Headless CMS.
+        </small>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -45,7 +53,7 @@ export default function Home({ posts }) {
               </Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={fields.date} />
+                <DateComponent dateString={fields.date} />
               </small>
             </li>
           ))}
