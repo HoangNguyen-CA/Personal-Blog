@@ -26,7 +26,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  console.log(posts);
   return (
     <Layout home>
       <Head>
@@ -38,6 +37,19 @@ export default function Home({ posts }) {
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {posts.map(({ sys, fields }) => (
+            <li className={utilStyles.listItem} key={sys.id}>
+              <Link href={`/posts/${fields.slug}`}>
+                <a>{fields.title}</a>
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={sys.createdAt} />
+              </small>
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
