@@ -6,8 +6,6 @@ import Image from 'next/image';
 import Layout from '../../components/layout';
 import DateComponent from '../../components/date';
 
-import utilStyles from '../../styles/utils.module.css';
-
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -49,8 +47,8 @@ export default function BlogPost({ post }) {
         <title>{title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1 className='text-4xl font-bold my-3'>{title}</h1>
+        <div className='text-lg my-2 text-slate-700'>
           <DateComponent dateString={date} />
         </div>
         <Image
@@ -58,9 +56,7 @@ export default function BlogPost({ post }) {
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
         ></Image>
-        <div>
-          <ReactMarkdown children={body} />
-        </div>
+        <ReactMarkdown children={body} className='markdown' />
       </article>
     </Layout>
   );

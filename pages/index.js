@@ -4,8 +4,6 @@ import DateComponent from '../components/date';
 
 import Layout, { siteTitle } from '../components/layout';
 
-import utilStyles from '../styles/utils.module.css';
-
 import { createClient } from 'contentful';
 
 export async function getStaticProps() {
@@ -35,24 +33,27 @@ export default function Home({ posts }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>I'm learning web development and writing about my journey.</p>
-        <small>
+      <section>
+        <p className='text-2xl'>
+          I'm learning web development and writing about my journey.
+        </p>
+        <br />
+        <p className='text-xl'>
           This blog was created using NextJS and uses static site generation.
           Posts are managed by Contentful Headless CMS.
-        </small>
+        </p>
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section className='text-xl pt-1'>
+        <h2 className='text-2xl my-4'>Blog</h2>
+        <ul>
           {posts.map(({ sys, fields }) => (
-            <li className={utilStyles.listItem} key={sys.id}>
+            <li className='mb-5' key={sys.id}>
               <Link href={`/posts/${fields.slug}`}>
                 <a>{fields.title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small className='text-slate-700'>
                 <DateComponent dateString={fields.date} />
               </small>
             </li>

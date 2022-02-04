@@ -1,44 +1,71 @@
-* {
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
-}
+@layer components {
+  a {
+    @apply hover:underline text-sky-600;
+  }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
+  .markdown {
+    @apply text-lg;
+  }
+  .markdown > * {
+    @apply my-4;
+  }
 
-a:hover {
-  text-decoration: underline;
-}
+  .markdown ul {
+    @apply list-disc pl-8;
+  }
+  .markdown ol {
+    @apply list-decimal pl-8;
+  }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+  .markdown h1,
+  .markdown h2,
+  .markdown h3,
+  .markdown h4,
+  .markdown h5,
+  .markdown h6 {
+    @apply font-semibold my-5;
+  }
 
-element.style {
-}
-pre > code {
-  background-color: rgba(0, 0, 0, 0.05);
-  display: block;
-  padding: 0.5em;
-  -webkit-text-size-adjust: none;
-  overflow-x: auto;
-  white-space: pre;
-}
+  .markdown h1 {
+    @apply text-4xl font-bold;
+  }
 
-code {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-  padding: 2px 4px;
+  .markdown h2 {
+    @apply text-3xl;
+  }
+
+  .markdown h3 {
+    @apply text-2xl;
+  }
+
+  .markdown h4 {
+    @apply text-xl;
+  }
+
+  .markdown h5 {
+    @apply text-lg;
+  }
+
+  .markdown h6 {
+    @apply text-base;
+  }
+
+  .markdown pre > code {
+    background-color: rgba(0, 0, 0, 0.05);
+    display: block;
+    padding: 0.5em;
+    -webkit-text-size-adjust: none;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .markdown code {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    padding: 2px 4px;
+  }
 }
