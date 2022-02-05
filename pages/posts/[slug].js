@@ -47,8 +47,8 @@ export default function BlogPost({ post }) {
         <title>{title}</title>
       </Head>
       <article>
-        <h1 className='text-4xl font-bold my-3'>{title}</h1>
-        <div className='text-lg my-2 text-slate-700'>
+        <h1 className='text-4xl font-bold mb-3'>{title}</h1>
+        <div className='text-lg mb-2 text-slate-700'>
           <DateComponent dateString={date} />
         </div>
         <Image

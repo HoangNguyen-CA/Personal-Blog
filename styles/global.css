@@ -54,18 +54,15 @@
     @apply text-base;
   }
 
-  .markdown pre > code {
-    background-color: rgba(0, 0, 0, 0.05);
-    display: block;
-    padding: 0.5em;
-    -webkit-text-size-adjust: none;
-    overflow-x: auto;
-    white-space: pre;
+  .markdown code {
+    @apply text-base rounded bg-gray-200 px-2 py-0.5;
   }
 
-  .markdown code {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 3px;
-    padding: 2px 4px;
+  .markdown pre {
+    @apply bg-slate-800 text-gray-50 p-4 rounded text-base overflow-x-auto;
+  }
+
+  .markdown pre > code {
+    @apply bg-transparent p-0;
   }
 }

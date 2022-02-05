@@ -7,12 +7,12 @@ export const siteTitle = 'Hoang Nguyen Blog';
 
 export default function Layout({ children, home }) {
   return (
-    <div className='max-w-xl mx-auto px-4 mt-12 mb-24'>
+    <div className='max-w-2xl mx-auto px-4 mt-12 mb-24'>
       <Head>
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Hoang Nguyen Blog' />
       </Head>
-      <header className='flex flex-col items-center mb-4'>
+      <header className='flex flex-col items-center mb-10'>
         {home ? (
           <>
             <Image
@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt={name}
             />
-            <h1 className='text-5xl font-bold my-5'>{name}</h1>
+            <h1 className='text-5xl font-bold mt-5'>{name}</h1>
           </>
         ) : (
           <>
@@ -39,7 +39,7 @@ export default function Layout({ children, home }) {
                 />
               </a>
             </Link>
-            <h2 className='text-3xl font-bold my-5'>
+            <h2 className='text-3xl font-bold mt-5'>
               <Link href='/'>
                 <a className='text-inherit'>{name}</a>
               </Link>

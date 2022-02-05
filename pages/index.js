@@ -44,11 +44,11 @@ export default function Home({ posts }) {
         </p>
       </section>
 
-      <section className='text-xl pt-1'>
+      <section className='pt-1'>
         <h2 className='text-2xl my-4'>Blog</h2>
         <ul>
           {posts.map(({ sys, fields }) => (
-            <li className='mb-5' key={sys.id}>
+            <li className='mb-5 text-xl' key={sys.id}>
               <Link href={`/posts/${fields.slug}`}>
                 <a>{fields.title}</a>
               </Link>
